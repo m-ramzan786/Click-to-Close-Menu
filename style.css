@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body {
+    background: #001a25;
+}
+span {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+#toggle {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    width: 32px;
+    height: 20px;
+    /* background: red; */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* z-index: ; */
+    /* border: 1px solid white; */
+    /* border-radius: 2px; */
+    /* padding-bottom: 2px; */
+}
+#toggle.active span{
+    background: transparent;
+}
+#toggle::before {
+    content: "";
+    position: absolute;
+    /* bottom: 0.05px; */
+    top: 7px;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    transform: translateY(-5px);
+    transition: 0.2s;
+    /* margin-bottom: 5px; */
+    border-radius: 2px;
+}
+#toggle::after {
+    content: "";
+    position: absolute;
+    /* top: 10px; */
+    bottom: 7px;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    transform: translateY(5px);
+    transition: 0.2s;
+    /* margin-top: 5px; */
+    border-radius: 2px;
+}
+#toggle.active::before {
+    transform: translateY(1.5px) rotate(45deg);
+}
+#toggle.active::after {
+    transform: translateY(-1.5px) rotate(-45deg);
+}
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #003147;
+    transition: 0.5s;
+}
+#sidebar.active {
+    left: 0px;
+}
+#sidebar ul {
+    position: relative;
+    margin-top: 50px;
+}
+#sidebar ul li {
+    list-style: none;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 40px;
+}
+#sidebar ul li:hover {
+    background: #03a9f4;
+}
+#sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
